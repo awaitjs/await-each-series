@@ -1,31 +1,31 @@
-export function (array, iterator) {
-  var defer = Promise.defer();
-  var promise = defer.promise;
+function each (items, iterator) {
+  return new Promise((resolve, reject) => {
+    let completed = 0
+    let total = items.length
 
-  var completed = 0;
-  var total = array.length;
-
-  var complete = function () {
-    completed += 1;
-    if (completed === total) {
-      defer.resolve();
-      return;
+    let iterate = () => {
+      let item = items[completed]
+      iterator(item)
+        .then(complete)
+        .catch(reject)
     }
-    iterate();
-  };
-  
-  var iterate = function () {
-    iterator(array[completed])
-      .then(complete)
-      .catch(defer.reject);
-  };
 
-  if (total === 0) {
-    defer.resolve();
-    return promise;
-  }
+    let complete = () => {
+      completed += 1
+      if (completed === total) {
+        resolve()
+        return
+      }
+      iterate()
+    }
 
-  iterate();
+    if (total === 0) {
+      resolve()
+      return
+    }
 
-  return promise;
+    iterate()
+  })
 }
+
+module.exports = each

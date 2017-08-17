@@ -1,2 +1,3 @@
-# promise-each
-each(array, promise).then(end)
+# each
+
+each(array, promise).then(callback)

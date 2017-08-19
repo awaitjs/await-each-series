@@ -1,0 +1,25 @@
+{
+  "name": "await-each-series",
+  "version": "0.0.1",
+  "description": "await each series",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awaitjs/await-each-series.git"
+  },
+  "keywords": [
+    "async",
+    "await",
+    "each",
+    "series"
+  ],
+  "author": "Enrico Marino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awaitjs/await-each-series/issues"
+  },
+  "homepage": "https://github.com/awaitjs/await-each-series#readme"
+}

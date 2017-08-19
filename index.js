@@ -1,4 +1,4 @@
-function each (items, iterator) {
+function await_each_series (items, iterator) {
   return new Promise((resolve, reject) => {
     let completed = 0
     let total = items.length
@@ -28,4 +28,4 @@ function each (items, iterator) {
   })
 }
 
-module.exports = each
+module.exports = await_each_series
